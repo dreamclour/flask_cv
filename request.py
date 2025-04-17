@@ -4,7 +4,7 @@ import requests
 url ="网址"
 image_path ="路径"
 with open(image_path, "rb") as image_file:
-    files = {"image": (image_path, image_file,"image/jpg")}#multipart/form-data类型
+    files = {"image": (image_path, image_file,"image/jpg")}#multipart/form-data格式
     response = requests.get(url, files=files)
     image_file.close()  
 print(response.status_code)  

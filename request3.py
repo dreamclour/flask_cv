@@ -5,12 +5,11 @@ from cv2 import getTickCount, getTickFrequency
 from io import BytesIO
 import requests
 from PIL import Image
-#yolo的本地部署模型
 # 加载 YOLOv8 模型
 
-url = "http://i-1.gpushare.com:21533/detect"
-urllocal = "http://127.0.0.1:5000/detect"
-file_path = "C:/Users/49860/Desktop/yymm.jpg"
+url = "网址"
+urllocal = "本地测试"
+file_path = "图片路径"
 model = YOLO("weights/yolov8s.pt")
 # 获取摄像头内容，参数 0 表示使用默认的摄像头
 cap = cv2.VideoCapture(0)
@@ -24,7 +23,7 @@ print(response.content)
 
 if response.status_code == 200:
     # 保存图像到本地
-    with open('C:/Users/49860/Desktop/yymm2.jpg', 'wb') as f:
+    with open(file_path, 'wb') as f:
         f.write(response.content)
     print("Image saved as output.jpg")
 else:

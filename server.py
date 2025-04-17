@@ -1,6 +1,7 @@
-
 import numpy as np
 #这个是保存在jupter中的程序，用于服务器的创建
+#返回的是图片的类别
+#云端运行不用debug模式
 from ultralytics import YOLO
 model = YOLO("yolov8s.pt")
 from flask import Flask, request, jsonify
@@ -26,7 +27,7 @@ def predict():
   #return "Hello, World!"
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0',port=8081)
+  app.run(host='0.0.0.0',port=8080)
 
 
 

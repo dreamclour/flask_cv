@@ -1,10 +1,11 @@
 # longlonglonglong
 # 读取文件并解析16进制数据
+#将两个八位数据转换成RGB的高位和低位
 import sys
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
-file_path='C:/Users/49860/Desktop/11.txt'
+file_path='路径'
 rgb_data = []
 imagee=np.zeros((200,320))
 bianma=np.zeros((1,64000))
@@ -25,24 +26,6 @@ def read_hex_from_file(file_path):
               g1 = g1 << 2
               b1 = (combined_16bit) & 0x1F
               b1 = b1 << 3
-
-              # b2 = combined_16bit >> 11
-              # b2 = b2 << 5
-              # r2 = (combined_16bit >> 5) & 0x3F
-              # r2 = r2 << 2
-              # g2 = (combined_16bit) & 0x1F
-              # g2 = g2 << 3
-              #
-              # g3 = combined_16bit >> 11
-              # g3 = g3 << 5
-              # b3 = (combined_16bit >> 5) & 0x3F
-              # b3 = b3 << 2
-              # r3 = (combined_16bit) & 0x1F
-              # r3 = r3 << 3
-              #
-              # r_arg = (r1 + r2 + r3)/3
-              # g_arg = (g1 + g2 + g3)/3
-              # b_arg = (b1 + b2 + b3)/3
 
               r_arg = r1
               g_arg = g1
@@ -65,7 +48,7 @@ def read_hex_from_file(file_path):
             # gray_image.save('C:/Users/49860/Desktop/gray_image.png')
             plt.imshow(imagee, cmap='gray')  # 'L' 表示灰度模式
             plt.show()
-            #plt.savefig("C:/Users/49860/Desktop/minist.png")
+            #plt.savefig("路径")
     return 0
 
 # 示例文件路径
